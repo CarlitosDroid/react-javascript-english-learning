@@ -2,7 +2,7 @@ version: '3'
 services:
   nodejsservice:
     build: ./nodejsservice
-    command: nodemon /home/node
+    command: nodemon --exec npm run start
     volumes:
       - "./nodejsservice/app:/home/node"
     ports:
