@@ -2,18 +2,18 @@ import React from "react";
 
 class AddContact extends React.Component {
   state = {
-    name: "",
+    firstName: "",
     email: "",
   };
 
   add = (event) => {
     event.preventDefault(); // avoid page refresh
-    if (this.state.name === "" || this.state.email === "") {
+    if (this.state.firstName === "" || this.state.email === "") {
       alert("All the fields are mandatory!");
       return;
     }
     this.props.addContactHandler(this.state); //Add to the list
-    this.setState({ name: "", email: "" }); // clean the form, this is like the value =
+    this.setState({ firstName: "", email: "" }); // clean the form, this is like the value =
   };
 
   render() {
@@ -27,8 +27,8 @@ class AddContact extends React.Component {
               type="text"
               name="name"
               placeholder="Name"
-              value={this.state.name}
-              onChange={(e) => this.setState({ name: e.target.value })}
+              value={this.state.firstName}
+              onChange={(e) => this.setState({ firstName: e.target.value })}
             />
           </div>
           <div className="field">
